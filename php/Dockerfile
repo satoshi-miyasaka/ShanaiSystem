@@ -19,9 +19,8 @@ ADD welcome.conf /etc/httpd/conf.d/
 #ADD ssl.conf /etc/httpd/conf.d/
 ADD security.conf /etc/httpd/conf.d/
 ADD www.conf /etc/php-fpm.d/
-
+ADD php-fpm.conf /usr/lib/tmpfiles.d
 # RUN composer create-project --prefer-dist cakephp/app test
 
 EXPOSE 80
 CMD ["/usr/sbin/httpd", "-DFOREGROUND"]
-
