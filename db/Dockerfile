@@ -1,1 +1,8 @@
 FROM mysql:latest
+
+ENV MYSQL_ROOT_PASSWORD test
+ENV MYSQL_DATABASE timecard
+ENV MYSQL_USER timecard
+ENV MYSQL_PASSWORD timecard
+
+EXPOSE 3306

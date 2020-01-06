@@ -1,8 +1,7 @@
 FROM centos:latest
 
-RUN useradd apache
 RUN yum update -y
-RUN yum install -y git zip unzip httpd httpd-devel
+RUN yum install -y git zip unzip httpd httpd-devel sudo
 RUN yum install -y php php-devel php-common php-mbstring php-openssl \
                    php-mysqlnd php-pdo php-pecl-apcu php-xml php-xmlrpc \
                    php-pear php-gd php-json php-intl
