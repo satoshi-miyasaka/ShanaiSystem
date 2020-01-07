@@ -1,9 +1,9 @@
 create table timecard.mst_user (
-	kaisya_id char(4),
-	user_id char(4),
+	user_id char(8),
 	hist_no int,
-	project_cd char(6) default '000000' not null,
-	kengen_cd char(2) default '00' not null,
+	kaisya_cd char(4),
+	project_cd char(6) not null,
+	kengen_cd char(2) not null,
 	user_pw varchar(400) not null,
 	sei_kana varchar(100) not null,
 	mei_kana varchar(100) not null,
@@ -13,9 +13,10 @@ create table timecard.mst_user (
 	last_access_ts timestamp,
 	last_login timestamp,
 	ng_count int default 0 not null,
-	insert_id char(9) not null,
+	token_flg int default 0 not null,
+	insert_id char(8) not null,
 	insert_ts timestamp default (CURRENT_TIMESTAMP) not null,
-	update_id char(9) not null,
+	update_id char(8) not null,
 	update_ts timestamp default (CURRENT_TIMESTAMP) not null,
-	primary key(kaisya_id, user_id, hist_no)
+	primary key(user_id, hist_no)
 );
